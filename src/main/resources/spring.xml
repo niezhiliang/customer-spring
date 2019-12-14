@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 自动装配设置  byName byType -->
+<beans default-autowire="byName">
+    <bean id = "userDao" class="cn.isuyu.customer.spring.dao.UserDaoImpl"></bean>
+
+    <bean id="userService" class="cn.isuyu.customer.spring.service.UserServiceImpl"></bean>
+
+    <bean id="userService2" class="cn.isuyu.customer.spring.service.UserServiceImpl2"></bean>
+
+<!--    &lt;!&ndash; 通过set方法注入 &ndash;&gt;-->
+<!--    <bean id = "userService" class="cn.isuyu.customer.spring.service.UserServiceImpl">-->
+<!--        <properties name = "userDao" ref = "userDao"></properties>-->
+<!--    </bean>-->
+
+<!--    &lt;!&ndash; 通过构造函数注入 &ndash;&gt;-->
+<!--    <bean id = "userService2" class="cn.isuyu.customer.spring.service.UserServiceImpl2">-->
+<!--        <constructor-arg ref="userDao"></constructor-arg>-->
+<!--    </bean>-->
+</beans>
