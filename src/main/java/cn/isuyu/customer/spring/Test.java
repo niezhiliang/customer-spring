@@ -1,5 +1,6 @@
 package cn.isuyu.customer.spring;
 
+import cn.isuyu.customer.spring.factory.AnnotationConfigApplicationContext;
 import cn.isuyu.customer.spring.factory.BeanFactory;
 import cn.isuyu.customer.spring.service.UserService;
 
@@ -12,12 +13,18 @@ import cn.isuyu.customer.spring.service.UserService;
 public class Test {
 
     public static void main(String[] args) {
-        BeanFactory beanFactory = new BeanFactory("spring.xml");
-        UserService userService = (UserService) beanFactory.getBean("userService");
+//        BeanFactory beanFactory = new BeanFactory("spring.xml");
+//        UserService userService = (UserService) beanFactory.getBean("userService");
+//        userService.test();
+//
+//        UserService userService2 = (UserService) beanFactory.getBean("userService2");
+//        userService2.test();
+
+        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext();
+        applicationContext.scm("cn.isuyu.customer.spring");
+        UserService userService = (UserService) applicationContext.getBean("userServiceImpl3");
         userService.test();
 
-        UserService userService2 = (UserService) beanFactory.getBean("userService2");
-        userService2.test();
     }
 
 }
